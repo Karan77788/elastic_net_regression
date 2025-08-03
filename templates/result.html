@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Lifetime Value - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>🔎 Customer Lifetime Value Estimation</h1>
+
+    <div class="result">
+        {% if prediction %}
+            <p><strong>Estimated Customer Lifetime Value (CLV):</strong></p>
+            <h2>₹ {{ prediction }} /-</h2>
+        {% else %}
+            <p>No prediction available.</p>
+        {% endif %}
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="/" style="text-decoration: none; color: #fff;">
+            <button style="
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;">
+                🔁 Predict Again
+            </button>
+        </a>
+    </div>
+
+</body>
+</html>
